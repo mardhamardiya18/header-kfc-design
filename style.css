@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+.main{
+    position: relative;
+    min-height: 100vh;
+    background: radial-gradient(#E31D2C,#c01212);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 100px;
+}
+header{
+    position: absolute; 
+    top: 0; left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 100px;
+}
+header .logo{
+    max-width: 90px;
+}
+header .navigation{
+    display: flex;
+    z-index: 1000;
+}
+.navigation li{
+    list-style: none;
+    margin-left: 50px;
+}
+.navigation li:hover{
+    border-bottom: 3px solid white;
+    padding-bottom: 5px;
+    margin-bottom: -8px;
+}   
+.navigation li a{
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+.navigation li .login{
+    padding: 15px 30px;
+    background-color: #fff;
+    color: #E31D2C;
+    margin-left: 30px;
+    border-radius: 40px;
+    transition: .5s ease;
+}
+.navigation li .login:hover{
+    background: radial-gradient(#E31D2C,#e3451d);
+    color: white;
+    border: 2px solid white;
+}
+.navigation .btn-login:hover{
+    border-bottom: none
+}
+.content{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+.content .text {
+    max-width: 600px;
+}
+.content .text h2{
+    font-size: 5em;
+    font-weight: 500;
+    color: white;
+}
+.content .text h2 span{
+    font-weight: 700;
+}
+.content .text p{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: white;
+    line-height: 1.5rem;
+    font-size: 1em;
+    margin: 20px 0;
+}
+.btn-order{
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 20px;
+    padding: 20px 40px;
+    background-color: #fff;
+    color: #e3451d;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 40px;
+    transition: .5s ease-in-out;
+}
+.btn-order:hover{
+    background: radial-gradient(#E31D2C,#e3451d);
+    color: white;
+    border: 3px solid white;
+}
+.slider{
+    position: relative;
+}
+.slider .product{
+    display: none;
+    width: 100%;
+}
+.slider .product.active{
+    display: block;
+    
+}
+.slider .product img{
+    width: 600px;
+   
+}
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+footer .sci{
+    display: flex;
+    list-style: none;
+}
+footer .sci a{
+    color: white;
+    font-size: 2rem;
+    display: inline-block;
+    margin-right: 20px;
+    transition: .4s ease-in-out;
+}
+footer .sci li a:hover{
+   transform: translateY(-105px);
+   transform: scale(2);
+}
+.prevNext{
+    position: relative;
+    user-select: none;
+}
+.prevNext p{
+    position: relative;
+    color: white;
+    margin-bottom: 15px;
+    text-align: end;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+.prevNext p::before{
+    content: '';
+   position: absolute;
+   left: -20px;
+   top: 50%;
+   transform: translate(-100%,-50%);
+    width: 100%;
+    height: 5px;
+    border-radius: 20px;
+    background-color: #fff;
+}
+.prevNext span {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border: 2px solid white;
+    cursor: pointer;
+    font-size: 2rem;
+    color: white;
+    margin-right: 20px;
+    transition: .3s ease-in-out;
+}
+.prevNext span:hover{
+    background-color: #fff;
+    color: tomato;
+}
+#toggle{
+    display: none;
+}
+
+
+/* responsive */
+@media screen and (max-width:991px) {
+    *{
+        overflow-x: hidden;
+    }
+    .main{
+        padding: 40px;
+    }
+    header{
+        padding: 20px 40px;
+    }
+    header .logo{
+        max-width: 70px;
+    }
+    .content{
+        flex-direction: column;
+        margin: 120px 0 40px;
+    }
+    .content .text{
+        max-width: 100%;
+    }
+    .content .text h2{
+        font-size: 4em;
+    }
+    .slider{
+        margin-top: 40px;
+    }
+    .slider .product img{
+        width: 100%;
+        max-width: 420px;
+    }
+    footer{
+        position: relative;
+        padding: 0;
+    }
+    header .navigation{
+        position: absolute;
+        clip-path: circle(0.7% at 50% 50%);
+        transition: .3s ease-in-out;
+    }
+    #toggle{
+        display: block;
+        position: relative;
+        color: white;
+        font-size: 2.3em;
+        z-index: 10000;
+    }
+    #toggle.bx-x{
+        position: fixed;
+        right: 40px;
+    }
+    .bx-x{
+        transform: rotate(180deg);
+        transition: .4s ease-in-out;
+    }
+    .content{
+        justify-content: center;
+    }
+    .navigation.active{
+        display: flex;
+        margin: auto;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: tomato;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        clip-path: circle(70.7% at 50% 50%);
+    }
+    .navigation li a{
+        font-size: 1.5em;
+    }
+    .navigation li .login{
+        display: inline-block;
+        margin:20px auto;
+    }
+    .navigation .btn-login:hover{
+        border-bottom: 3px solid tomato;
+    }
+   
+}
+@media screen and (max-width:480px) {
+    header, .main{
+        padding: 20px;
+    }
+    #toggle{
+        right: 20px;
+    }
+    .content .text h2{
+        font-size: 2rem;
+    }
+    .btn-order{
+        padding: 15px 30px;
+    }
+    footer{
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+    }
+    footer .sci{
+        margin-top: 30px;
+    }
+}
+
